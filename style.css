@@ -1,0 +1,189 @@
+/* 전체 페이지 기본 스타일 */
+body, html {
+    margin: 0; /* 브라우저 기본 여백 제거 */
+    padding: 0; /* 브라우저 기본 패딩 제거 */
+    height: 500vh; /* 5개 섹션 분량의 세로 스크롤 공간 확보 (viewport height * 5) */
+    font-family: 'Noto Sans KR', sans-serif; /* 한글용 웹폰트 지정 */
+    background: #ffdbdb; /* 페이지 배경색 */
+}
+
+/* ---- 육각형 헤더 스타일 ---- */
+.hex-header { 
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: #ffdbdb;
+  position: fixed;
+  top: 0; left: 0; width: 100vw;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  padding: 105px 0px 0px 0px;
+
+}
+
+.hex-tab {
+  width: 306px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.11rem;
+  color: #222;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  transition: filter 0.2s, box-shadow 0.2s;
+  position: relative;
+  z-index: 1;
+  border: 1px solid #ccc;
+}
+
+/* 각 탭 모양 설정 */
+.hex-tab:nth-child(1) { border-radius: 12px 100px 0 0px; }
+.hex-tab:nth-child(2) { border-radius: 100px 0 0 0; }    
+.hex-tab:nth-child(3) { border-radius: 0; }            
+.hex-tab:nth-child(4) { border-radius: 0;}     
+.hex-tab:nth-child(5) { border-radius: 0 12px 0 0; }  
+
+.hex-tab span {
+  z-index: 2;
+  position: relative;
+  pointer-events: none;
+}
+
+.hex-tab.active,
+.hex-tab:hover {
+  box-shadow: 0 4px 16px rgba(255, 144, 171, 0.521);
+  cursor: pointer;
+  color: #522121;
+}
+
+
+
+
+
+/* 포트폴리오 컨테이너 - 화면 중앙 고정 박스 */
+.portfolio-container {
+    margin-top: 80px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    width: 80vw;
+    max-width: 1600px;
+    height: 75vh;
+    background: rgb(254, 255, 206); /* 배경 흰색 */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1); /* 은은한 그림자 */
+    border-radius:0 0 15px 15px; /* 둥근 모서리 */
+    overflow: hidden; /* 내부 넘침 숨김 */
+}
+
+/* 폴라로이드 프레임 영역 */
+.polaroid-frame {
+    /*background-color: #6db8ff;*/
+    margin-left: 15px;
+    position: relative; /* 자식 절대 위치 요소 기준 */
+    width: 40%; /* 컨테이너 가로의 40% */
+    height: 95%; /* 컨테이너 세로 100% */
+    display: flex; /* 자식 이미지 중앙 정렬 위해 flex 사용 */
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+}
+
+/* 썸네일 이미지 (폴라로이드 안 실제 사진) */
+.polaroid-frame .thumbnail {
+    margin-left: px;
+    margin-bottom: 45px;
+    width: 95%; /* 프레임 안에서 이미지 너비 (조절 가능) */
+    height: 90%; /* 프레임 안에서 이미지 높이 (조절 가능) */
+    object-fit: cover; /* 이미지 비율 유지하며 박스 꽉 채우기 */
+    border-radius: 8px; /* 이미지 모서리 둥글게 */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12); /* 이미지 그림자 */
+    transition: opacity 0.3s ease; /* 투명도 변화 부드럽게 */
+    z-index: 1; /* 프레임보다 아래에 위치 */
+    position: relative; /* z-index 적용 위해 필요 */
+}
+
+/* 폴라로이드 프레임 이미지 (썸네일 위에 덮기) */
+.polaroid-frame .frame {
+    position: absolute; /* 부모 기준 절대 위치 */
+    top: 0; /* 부모 상단에 딱 붙임 */
+    left: 0; /* 부모 좌측에 딱 붙임 */
+    width: 100%; /* 부모 너비 전체 */
+    height: 100%; /* 부모 높이 전체 */
+    pointer-events: none; /* 클릭 등 이벤트 무시 */
+    z-index: 2; /* 썸네일보다 위에 표시 */
+}
+
+/* 우측 설명 영역 */
+.portfolio-description {
+    width: 60%; /* 컨테이너 가로의 60% */
+    padding-left: 40px; /* 왼쪽 여백 */
+    font-size: 1.2rem; /* 글자 크기 */
+    color: #333; /* 글자 색 */
+    overflow-y: auto; /* 내용이 길면 세로 스크롤 가능 */
+    max-height: 100%; /* 최대 높이 부모 높이와 같게 */
+}
+
+/* 각 설명 텍스트 블록 기본 숨김 */
+.desc {
+    display: none;
+    line-height: 1.6; /* 줄간격 */
+}
+
+/* 첫 번째 설명만 기본 표시 */
+.desc:first-child {
+    display: block;
+}
+
+/* 스크롤 트리거용 빈 div 스타일 - 페이지 세로 영역 구분용 */
+.trigger {
+    position: absolute;
+    width: 100%;
+    height: 100vh; /* 뷰포트 높이만큼 */
+}
+
+/* 각 트리거 위치(섹션별로 100vh 간격) */
+#trigger-0 { top: 0; }
+#trigger-1 { top: 100vh; }
+#trigger-2 { top: 200vh; }
+#trigger-3 { top: 300vh; }
+#trigger-4 { top: 400vh; }
+
+/* 폼 스타일 - 메시지 남기기 섹션 */
+form {
+    width: 700px;
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+}
+
+/* 텍스트 영역 스타일 */
+textarea {
+    resize: none; /* 크기 조절 불가 */
+    height: 150px; /* 높이 */
+    margin-bottom: 15px; /* 아래 여백 */
+    padding: 10px; /* 안쪽 여백 */
+    font-size: 1rem; /* 글자 크기 */
+    border-radius: 6px; /* 둥근 모서리 */
+    border: 1px solid #ccc; /* 연한 테두리 */
+    font-family: inherit; /* 부모 폰트 상속 */
+}
+
+/* 버튼 스타일 */
+button {
+    padding: 10px; /* 안쪽 여백 */
+    font-size: 1rem; /* 글자 크기 */
+    border: none; /* 테두리 없음 */
+    background-color: #007bff; /* 파란색 배경 */
+    color: white; /* 흰색 글자 */
+    border-radius: 6px; /* 둥근 모서리 */
+    cursor: pointer; /* 마우스 포인터 변경 */
+    transition: background-color 0.3s ease; /* 배경색 부드럽게 변경 */
+}
+
+/* 버튼 호버 시 색상 변경 */
+button:hover {
+    background-color: #0056b3;
+}
