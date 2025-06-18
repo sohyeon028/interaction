@@ -1,62 +1,257 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>원페이지 포트폴리오</title>
-<link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARK-SOHYEON Portfolio</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <!-- 헤더: 육각형 탭 메뉴 -->
-    <div class="hex-header">
-    <div class="hex-tab active" data-index="0" style="background:#ebe5fb;"><span>표지</span></div>
-    <div class="hex-tab" data-index="1" style="background:#e5f1fb;"><span>프로필</span></div>
-    <div class="hex-tab" data-index="2" style="background:#fbe5ea;"><span>포트폴리오</span></div>
-    <div class="hex-tab" data-index="3" style="background:#e5fbee;"><span>갤러리</span></div>
-    <div class="hex-tab" data-index="4" style="background:#fdf6e0;"><span>메시지</span></div>
-</div>
+    <header class="header">
+        <div class="header-top">
+            <div class="logo">PARK SOHYEON</div>
+            <nav class="main-nav">
+                <ul>
+                    <li class="nav-item active"><a href="#cover">Main</a></li>
+                    <li class="nav-item"><a href="#profile">Profile</a></li>
+                    <li class="nav-item"><a href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a href="#community">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <div class="portfolio-container">
-    <div class="polaroid-frame">
-        <img class="thumbnail" id="portfolio-image" src="images/profile/이미지 예1.jpg" alt="Cover Image" />
-        <img class="frame" src="images/frame2.png" alt="폴라로이드 프레임" />
-    </div>
-    <div class="portfolio-description">
-    <div class="desc" id="desc-0">표지 내용 작성</div>
-    <div class="desc" id="desc-1" style="display:none;">
-        <h2>프로필</h2>
-        <p>프로필 내용</p>
-    </div>
-    <div class="desc" id="desc-2" style="display:none;">
-        <h2>포트폴리오</h2>
-        <p>포트폴리오 내용</p>
-    </div>
-    <div class="desc" id="desc-3" style="display:none;">
-        <h2>갤러리</h2>
-        <p>디지털 사진 디자인 수업 때 야외 촬영한 작품 사진 및 이미지 갤러리</p>
-    </div>
-    <div class="desc" id="desc-4" style="display:none;">
-        <h2>메시지</h2>
-        <form id="message-form">
-        <textarea placeholder="메시지를 남겨주세요" required></textarea>
-        <button type="submit">전송</button>
-        </form>
-    </div>
-    </div>
-</div>
+    <div class="main-page-container">
+        <div class="content-viewport">
+            <main class="main-content" id="cover">
+                <div class="content-wrapper">
+                    <div class="text-section">
+                        <div class="title-container">
+                            <h1 class="animated-title">
+                                <span class="title-word">text</span>
+                                <span class="title-word">text</span>
+                                <span class="title-word">text</span>
+                                <span class="title-word">text</span>
+                                <span class="title-word">text</span>
+                            </h1>
+                        </div>
+                        <div class="subtitle-container">
+                            <p class="typing-text">
+                                text <span class="highlight">text</span>text<br>
+                                <span class="creative-text">text</span>text<br>
+                                <span class="passion-text">text</span>text
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="illustration-section">
+                    <img src=" " alt="Illustration">
+                </div>
+            </main>
 
-    <!-- 스크롤 트리거용 빈 div -->
-    <div id="trigger-0" class="trigger"></div>
-    <div id="trigger-1" class="trigger"></div>
-    <div id="trigger-2" class="trigger"></div>
-    <div id="trigger-3" class="trigger"></div>
-    <div id="trigger-4" class="trigger"></div>
+            <section id="profile" class="portfolio-section">
+                <div class="profile-content">
+                    <div class="profile-left-column">
+                        <!-- 좌측 이미지 공간 -->
+                        <div class="profile-image-container">
+                            <div class="sparkle">⭐</div>
+                            <div class="sparkle">⭐</div>
+                            <div class="sparkle">⭐</div>
+                            <div class="sparkle">⭐</div>
+                            <img src="images/profile/증명사진 캐릭터화_누끼.png" alt="Profile Image" class="profile-layout-image profile-image-normal">
+                            <img src="images/profile/증명사진 캐릭터화_웃는 모습_누끼.png" alt="Profile Image Smiling" class="profile-layout-image profile-image-hover">
+                        </div>
+                    </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
-<script src="index.js"></script>
+                    <div class="profile-right-column">
+                        <div class="profile-text-area">
+                            <h2>Profile</h2>
+                            <p>text</p>
+                        </div>
+
+                        <div class="profile-text-area">
+                            <h3>text</h3>
+                            <p>text</p>
+                        </div>
+
+                        <div class="profile-text-area">
+                            <h4>text</h4>
+                            <p>text</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="portfolio" class="portfolio-section">
+                <div class="portfolio-rows-container">
+                    <div class="portfolio-row">
+                        <div class="portfolio-main-item-container">
+                            <img src="images/portfolio/포트폴리오1_북 표지 디자인 목업_크롭.png" alt="Premium Office Plan">
+                            <div class="portfolio-title">"나는 당신이 행복했으면 좋겠습니다" - Book cover design </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-row">
+                        <div class="portfolio-main-item-container">
+                            <img src="images/portfolio/포트폴리오2_다토마 크림 상세 페이지 디자인.jpg" alt="Section Office Plan">
+                            <div class="portfolio-title">SUPER 80PLUS+ DATOMA CREAM - detailed page design</div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-row">
+                        <div class="portfolio-main-item-container">
+                            <img src="images/portfolio/포트폴리오3_이미지촬영_제로소다 디자인.jpg" alt="Office Floor Plan">
+                            <div class="portfolio-title">ZEROSODA drinkables - poster design</div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-row">
+                        <div class="portfolio-main-item-container">
+                            <img src="images/portfolio/포트폴리오4_몬스터 에너지 배경.png" alt="Retail Floor Plan">
+                            <div class="portfolio-title">Monster Energy - website renewal</div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="제로 소다 이미지 - 누끼 촬영 포스터 디자인" class="portfolio-section">
+                <div class="gallery-content">
+                    <div class="gallery-header">
+                        <h2>Gallery</h2>
+                        <p>My photo</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gallery/갤러리2.JPG" alt="갤러리 이미지 1">
+                        <div class="gallery-item-info">
+                            <h3>3월 27일</h3>
+                            <p>카메라 설명해주시는 교수님 찰칵📸</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/gallery/갤러리8.JPG" alt="갤러리 이미지 2">
+                        <div class="gallery-item-info">
+                            <h3>5월 7일</h3>
+                            <p>남대문 꽃 도매상가에서 찰칵📸</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/gallery/갤러리9.JPG" alt="갤러리 이미지 3">
+                        <div class="gallery-item-info">
+                            <h3>5월 7일</h3>
+                            <p>남대문 꽃 도매상가에 메달린 화분</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/gallery/갤러리10.JPG" alt="갤러리 이미지 4">
+                        <div class="gallery-item-info">
+                            <h3>5월 7일</h3>
+                            <p>남대문 꽃 도매상가에 활짝 펴진 꽃들</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/gallery/갤러리12.JPG" alt="갤러리 이미지 5">
+                        <div class="gallery-item-info">
+                            <h3>5월 7일</h3>
+                            <p>병아리가 부조리에 안에</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/gallery/갤러리14.JPG" alt="갤러리 이미지 6">
+                        <div class="gallery-item-info">
+                            <h3>5월 7일</h3>
+                            <p>거울의 나 안녕</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/gallery/갤러리17.JPG" alt="갤러리 이미지 6">
+                        <div class="gallery-item-info">
+                            <h3>5월 22일</h3>
+                            <p>귀여운 포메라니안, 미소로 사진을 남기다</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/gallery/갤러리18.JPG" alt="갤러리 이미지 6">
+                        <div class="gallery-item-info">
+                            <h3>5월 22일</h3>
+                            <p>믹스견의 사랑스러운 미소</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="community" class="portfolio-section">
+                <div class="community-content">
+                    <div class="community-header">
+                        <h2>Content</h2>
+                        <p>원하는 디자인이 있으신가요? 제안해주세요!</p>
+                    </div>
+
+                    <form class="design-proposal-form">
+                        <div class="form-group">
+                            <label for="name">이름</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">이메일</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="design-type">디자인 유형</label>
+                            <select id="design-type" name="design-type" required>
+                                <option value="">선택해주세요</option>
+                                <option value="interior">디자인1</option>
+                                <option value="furniture">디자인2</option>
+                                <option value="space">디자인3</option>
+                                <option value="other">기타</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">디자인 제안 내용</label>
+                            <textarea id="description" name="description" rows="5" required 
+                                placeholder="원하시는 디자인의 스타일, 색상, 분위기 등을 자세히 설명해주세요."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reference">참고 이미지</label>
+                            <input type="file" id="reference" name="reference" accept="image/*">
+                            <p class="file-hint">참고하실 이미지가 있다면 첨부해주세요. (선택사항)</p>
+                        </div>
+
+                        <button type="submit" class="submit-btn">제안하기</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-info">
+            <span>footer 내용1</span>
+            <span>footer 내용2</span>
+            <span>footer 내용3</span>
+            <span>footer 내용4</span>
+            <span>footer 내용5</span>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

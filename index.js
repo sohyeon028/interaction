@@ -1,72 +1,102 @@
-// GSAP ScrollToPlugin 등록
-gsap.registerPlugin(ScrollToPlugin);
+document.addEventListener('DOMContentLoaded', function() {
+    // ScrollMagic 
+    // var controller = new ScrollMagic.Controller();
 
-const images = [
-  'images/이미지 예시1.jpg',
-  'images/이미지 예시2.jpg',
-  'images/이미지 예시3.jpg',
-  'images/이미지 예시4.JPG',
-  'images/이미지 예시5.jpg'
-];
+    const sectionsWrapper = document.querySelector('.sections-wrapper');
+    const sections = Array.from(document.querySelectorAll('.main-content, .portfolio-section'));
+    const navTabs = document.querySelectorAll('.main-nav li');
+    const sectionHeight = 500; // 각 섹션의 고정 높이 (CSS와 일치해야 함)
+    const header = document.querySelector('.header');
+    const headerHeight = header ? header.offsetHeight : 0; 
 
-const controller = new ScrollMagic.Controller();
-const tabs = document.querySelectorAll('.hex-tab');
-const triggers = [...Array(images.length).keys()].map(i => document.getElementById(`trigger-${i}`));
+    let currentSectionIndex = 0;
+    let isAnimating = false;
 
-// 스크롤에 따른 이미지/텍스트/헤더 active 변경
-images.forEach((img, idx) => {
-  new ScrollMagic.Scene({
-    triggerElement: `#trigger-${idx}`,
-    duration: window.innerHeight,
-    triggerHook: 0.5
-  })
-  .on("enter", () => {
-    // 이미지 변경
-    gsap.to(".thumbnail", {
-      opacity: 0,
-      duration: 0.3,
-      onComplete: () => {
-        document.querySelector(".thumbnail").src = images[idx];
-        gsap.to(".thumbnail", {opacity: 1, duration: 0.3});
-      }
-    });
+    
+    const sectionMap = {
+        'cover': 0,
+        'profile': 1,
+        'portfolio': 2,
+        'gallery': 3,
+        'community': 4
+    };
 
-    // 설명 텍스트 변경
-    document.querySelectorAll('.desc').forEach((el, i) => {
-      el.style.display = (i === idx) ? 'block' : 'none';
-    });
+    // 섹션 전환 함수
+    function goToSection(index) {
+        if (isAnimating || index < 0 || index >= sections.length) {
+            return;
+        }
 
-    // 헤더 탭 active 변경
-    tabs.forEach(tab => tab.classList.remove('active'));
-    const currentTab = document.querySelector(`.hex-tab[data-index="${idx}"]`);
-    if (currentTab) currentTab.classList.add('active');
-  })
-  .addTo(controller);
-});
-
-// 탭 클릭 시 해당 섹션으로 부드럽게 스크롤 이동
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    const idx = Number(tab.getAttribute('data-index'));
-    if (idx >= 0 && idx < triggers.length) {
-      const target = triggers[idx];
-      gsap.to(window, {
-        duration: 1,
-        scrollTo: { y: target.offsetTop },
-        ease: "circ.out"
-      });
+        isAnimating = true;
+        
+        // 현재 섹션 비활성화
+        sections[currentSectionIndex].classList.remove('active');
+        
+        // 새 섹션 활성화
+        sections[index].classList.add('active');
+        
+        // 스크롤 위치 조정 (헤더 높이만큼 오프셋)
+        const targetSection = sections[index];
+        const targetOffset = targetSection.offsetTop - headerHeight;
+        
+        // 부드러운 스크롤 애니메이션
+        window.scrollTo({
+            top: targetOffset,
+            behavior: 'smooth'
+        });
+        
+        // 애니메이션 완료 후 상태 업데이트
+        setTimeout(() => {
+            isAnimating = false;
+            currentSectionIndex = index;
+            updateNavActiveState();
+        }, 500);
     }
-  });
-});
 
-// 폼 제출 이벤트 (수정)
-const form = document.getElementById('message-form');
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('메시지가 전송되었습니다. 감사합니다!');
-    form.reset();
-  });
-} else {
-  console.warn('message-form 폼 요소를 찾을 수 없습니다.');
-}
+    // ID로 섹션 이동
+    function goToSectionById(sectionId) {
+        const index = sectionMap[sectionId];
+        if (index !== undefined) {
+            goToSection(index);
+        }
+    }
+
+    // 내비게이션 active 상태 업데이트
+    function updateNavActiveState() {
+        navTabs.forEach((tab, idx) => {
+            if (idx === currentSectionIndex) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+    }
+
+    // 마우스 휠 이벤트 리스너
+    window.addEventListener('wheel', function(event) {
+        if (isAnimating) {
+            event.preventDefault();
+            return;
+        }
+
+        event.preventDefault();
+
+        if (event.deltaY > 0) {
+            goToSection(currentSectionIndex + 1);
+        } else {
+            goToSection(currentSectionIndex - 1);
+        }
+    }, { passive: false });
+
+    // 내비게이션 탭 클릭 이벤트 리스너
+    navTabs.forEach((tab, index) => {
+        tab.addEventListener('click', function(event) {
+            event.preventDefault(); // 기본 링크 동작 방지
+            goToSection(index);
+        });
+    });
+
+    // 페이지 로드 시 초기 상태 설정
+    sections[0].classList.add('active');
+    updateNavActiveState();
+});
