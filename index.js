@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // var controller = new ScrollMagic.Controller();
 
     const sectionsWrapper = document.querySelector('.sections-wrapper');
-    const sections = Array.from(document.querySelectorAll('.main-content, .portfolio-section'));
+    const sections = Array.from(document.querySelectorAll('.main-content, .portfolio-section, .gallery-section'));
     const navTabs = document.querySelectorAll('.main-nav li');
     const sectionHeight = 500; // 각 섹션의 고정 높이 (CSS와 일치해야 함)
     const header = document.querySelector('.header');
@@ -99,4 +99,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // 페이지 로드 시 초기 상태 설정
     sections[0].classList.add('active');
     updateNavActiveState();
+
+    // 갤러리 Swiper (한 줄, 2개씩 크게, 무한 루프, 프로그레스바 페이지네이션)
+    new Swiper('.gallery-main', {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'progressbar'
+        }
+    });
 });
