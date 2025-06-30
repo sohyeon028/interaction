@@ -25,31 +25,35 @@
 
     <div class="main-page-container">
         <div class="content-viewport">
-            <main class="main-content" id="cover">
+            <main class="main-content" id="cover" style="position:relative;">
+                <canvas id="fireworks-canvas" style="position:absolute; left:0; top:0; width:100%; height:100%; pointer-events:none; z-index:1;"></canvas>
                 <div class="content-wrapper">
+                    <div class="character-container">
+                        <img src="images/profile/증명사진 캐릭터화_웃는 모습_누끼.png" alt="캐릭터" class="character" />
+                    </div>
                     <div class="text-section">
                         <div class="title-container">
                             <h1 class="animated-title">
-                                <span class="title-word">text</span>
-                                <span class="title-word">text</span>
-                                <span class="title-word">text</span>
-                                <span class="title-word">text</span>
-                                <span class="title-word">text</span>
+                                <span class="title-word">나누는</span>
+                                <span class="title-word">감정,</span>
+                                <span class="title-word">따뜻한</span>
+                                <span class="title-word">디자인</span>
                             </h1>
                         </div>
                         <div class="subtitle-container">
                             <p class="typing-text">
-                                text <span class="highlight">text</span>text<br>
-                                <span class="creative-text">text</span>text<br>
-                                <span class="passion-text">text</span>text
+                                <span class="letter">안</span><span class="letter">녕</span><span class="letter">하</span><span class="letter">세</span><span class="letter">요</span><span class="letter">,</span>
+                                <br><span class="letter highlight-text">감</span><span class="letter highlight-text">정</span><span class="letter highlight-text">을</span>
+                                <span class="letter highlight-text">표</span><span class="letter highlight-text">현</span><span class="letter">하</span><span class="letter">고</span>
+                                <span class="letter creative-text">공</span><span class="letter creative-text">감</span><span class="letter">하</span><span class="letter">는</span>
+                                <br><span class="letter">따</span><span class="letter">뜻</span><span class="letter">한</span>
+                                <span class="letter">디</span><span class="letter">자</span><span class="letter">이</span><span class="letter">너</span>
+                                <span class="letter">박</span><span class="letter">소</span><span class="letter">현</span><span class="letter">입</span><span class="letter">니</span><span class="letter">다</span><span class="letter">.</span>
                             </p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="illustration-section">
-                    <img src="images/portfolio/포트폴리오 이미지 예시 1.jpg" alt="Illustration">
-                </div>
             </main>
 
             <section id="profile" class="portfolio-section">
@@ -79,13 +83,13 @@
                             <h3>Tools</h3>
                             <p>Photoshop <br>
                             Illustrator <br>
-                            Premiere Pro</p>
+                            Premiere Pro <br>
+                            After Effects</p>
                         </div>
 
                         <div class="profile-text-area">
                             <h4>Education</h4>
-                            <p>2021 삼일상업고등학교 ERP경영학과 졸업<br>
-                            2025 한국폴리텍1대학 서울정수캠퍼스 시각디자인과 졸업</p>
+                            <p>2026. 02. 한국폴리텍1대학 서울정수캠퍼스 시각디자인과 졸업</p>
                         </div>
                     </div>
                 </div>
@@ -133,124 +137,197 @@
                 <div class="swiper gallery-main">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="images/gallery/갤러리2.JPG" alt="갤러리 이미지 1">
+                            <img src="images/gallery/갤러리3.JPG" alt="갤러리 이미지 1">
                             <div class="gallery-item-info">
-                                <h3>3월 27일</h3>
-                                <p>카메라 설명해주시는 교수님 찰칵📸</p>
+                                <h3>2025년 5월 7일</h3>
+                                <p>남대문 꽃 도매상가에 메달린 화분📸</p>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
-                            <img src="images/gallery/갤러리8.JPG" alt="갤러리 이미지 2">
+                            <img src="images/gallery/갤러리4.JPG" alt="갤러리 이미지 2">
                             <div class="gallery-item-info">
-                                <h3>5월 7일</h3>
+                                <h3>2025년 5월 7일</h3>
                                 <p>남대문 꽃 도매상가에서 찰칵📸</p>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
-                            <img src="images/gallery/갤러리9.JPG" alt="갤러리 이미지 3">
+                            <img src="images/gallery/갤러리5.JPG" alt="갤러리 이미지 3">
                             <div class="gallery-item-info">
-                                <h3>5월 7일</h3>
-                                <p>남대문 꽃 도매상가에 메달린 화분</p>
+                                <h3>2025년 5월 7일</h3>
+                                <p>병아리: 엄마 어디갔어!!</p>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
-                            <img src="images/gallery/갤러리10.JPG" alt="갤러리 이미지 4">
+                            <img src="images/gallery/갤러리7.JPG" alt="갤러리 이미지 4">
                             <div class="gallery-item-info">
-                                <h3>5월 7일</h3>
-                                <p>남대문 꽃 도매상가에 활짝 펴진 꽃들</p>
+                                <h3>2025년 5월 7일</h3>
+                                <p>남대문 꽃 도매상가에 자라난 구황작물</p>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
-                            <img src="images/gallery/갤러리12.JPG" alt="갤러리 이미지 6">
+                            <img src="images/gallery/갤러리8.JPG" alt="갤러리 이미지 6">
                             <div class="gallery-item-info">
-                                <h3>5월 7일</h3>
-                                <p>병아리가 부조리에 안에</p>
+                                <h3>2025년 5월 7일</h3>
+                                <p>나는 게장이 되기 싫어</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="images/gallery/갤러리9.JPG" alt="갤러리 이미지 8">
+                            <div class="gallery-item-info">
+                                <h3>2025년 5월 22일</h3>
+                                <p>나는 행복만땅 강아지야(✿◠‿◠)</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="images/gallery/갤러리10.JPG" alt="갤러리 이미지 8">
+                            <div class="gallery-item-info">
+                                <h3>2025년 5월 22일</h3>
+                                <p>저 잘 나와요? 입 꼬리 더 올려요?(´▽｀)♪</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="images/gallery/갤러리11.JPG" alt="갤러리 이미지 8">
+                            <div class="gallery-item-info">
+                                <h3>2025년 6월 5일</h3>
+                                <p>거울의 나 안녕👋</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="images/gallery/갤러리12.JPG" alt="갤러리 이미지 8">
+                            <div class="gallery-item-info">
+                                <h3>2025년 6월 5일</h3>
+                                <p>시간이 멈춘 거리</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="images/gallery/갤러리14.JPG" alt="갤러리 이미지 8">
+                            <div class="gallery-item-info">
+                                <h3>2025년 6월 5일</h3>
+                                <p>빛나는 지구</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="images/gallery/갤러리15.JPG" alt="갤러리 이미지 8">
+                            <div class="gallery-item-info">
+                                <h3>2025년 6월 5일</h3>
+                                <p>누군가에게는 여정, 누군가에게는 여행</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="images/gallery/갤러리16.JPG" alt="갤러리 이미지 8">
+                            <div class="gallery-item-info">
+                                <h3>2025년 6월 5일</h3>
+                                <p>컬러로 세상을 채우다</p>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
                             <img src="images/gallery/갤러리17.JPG" alt="갤러리 이미지 8">
                             <div class="gallery-item-info">
-                                <h3>5월 22일</h3>
-                                <p>귀여운 포메라니안, 미소로 사진을 남기다</p>
+                                <h3>2025년 6월 5일</h3>
+                                <p>지난 날의 가을</p>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
                             <img src="images/gallery/갤러리18.JPG" alt="갤러리 이미지 8">
                             <div class="gallery-item-info">
-                                <h3>5월 22일</h3>
-                                <p>카메라 볼 줄 아는 믹스견 친구🐶</p>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <img src="images/gallery/갤러리20.JPG" alt="갤러리 이미지 8">
-                            <div class="gallery-item-info">
-                                <h3>5월 22일</h3>
-                                <p>털찐 친구</p>
+                                <h3>2025년 6월 5일</h3>
+                                <p>저기 누구야?</p>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
                             <img src="images/gallery/갤러리21.JPG" alt="갤러리 이미지 8">
                             <div class="gallery-item-info">
-                                <h3>6월 5일</h3>
-                                <p>거울의 나 안녕👋</p>
+                                <h3>2025년 6월 5일</h3>
+                                <p>장미꽃 한 송이</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="images/gallery/갤러리22.JPG" alt="갤러리 이미지 8">
+                            <div class="gallery-item-info">
+                                <h3>2025년 6월 5일</h3>
+                                <p>전지적 스나이퍼 시점</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="images/gallery/갤러리23.JPG" alt="갤러리 이미지 8">
+                            <div class="gallery-item-info">
+                                <h3>2025년 6월 21일</h3>
+                                <p>인간아.. 나 지쳤어...</p>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
                             <img src="images/gallery/갤러리24.JPG" alt="갤러리 이미지 8">
                             <div class="gallery-item-info">
-                                <h3>6월 5일</h3>
-                                <p>과거로 돌아간다면?</p>
+                                <h3>2025년 6월 21일</h3>
+                                <p>조용히 해, 물고기 도망갈라...</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="images/gallery/갤러리25.JPG" alt="갤러리 이미지 8">
+                            <div class="gallery-item-info">
+                                <h3>2025년 6월 21일</h3>
+                                <p>여유로운 하루</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="images/gallery/갤러리26.JPG" alt="갤러리 이미지 8">
+                            <div class="gallery-item-info">
+                                <h3>2025년 6월 21일</h3>
+                                <p>저기 다리 밑에 누구야?</p>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
                             <img src="images/gallery/갤러리27.JPG" alt="갤러리 이미지 8">
                             <div class="gallery-item-info">
-                                <h3>6월 5일</h3>
-                                <p>정신없이 흘러가는 하루</p>
+                                <h3>2025년 6월 21일</h3>
+                                <p>야생동물 출몰 구역</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="images/gallery/갤러리28.JPG" alt="갤러리 이미지 8">
+                            <div class="gallery-item-info">
+                                <h3>2025년 6월 21일</h3>
+                                <p>여긴 인간이 살지 않는 곳인데..?</p>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
                             <img src="images/gallery/갤러리29.JPG" alt="갤러리 이미지 8">
                             <div class="gallery-item-info">
-                                <h3>6월 5일</h3>
-                                <p>환영합니다💖</p>
+                                <h3>2025년 6월 21일</h3>
+                                <p>인간아 나 어때?</p>
                             </div>
                         </div>
 
                         <div class="swiper-slide">
                             <img src="images/gallery/갤러리30.JPG" alt="갤러리 이미지 8">
                             <div class="gallery-item-info">
-                                <h3>6월 5일</h3>
-                                <p>컬러로 세상을 채우다</p>
+                                <h3>2025년 6월 21일</h3>
+                                <p>전하, 궁으로 돌아가실 시간입니다.</p>
                             </div>
                         </div>
 
-                        <div class="swiper-slide">
-                            <img src="images/gallery/갤러리31.JPG" alt="갤러리 이미지 8">
-                            <div class="gallery-item-info">
-                                <h3>6월 5일</h3>
-                                <p>오늘을 기록할 수 있는 건 사진이다</p>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <img src="images/gallery/갤러리38.JPG" alt="갤러리 이미지 8">
-                            <div class="gallery-item-info">
-                                <h3>6월 5일</h3>
-                                <p>스나이퍼가 돼</p>
-                            </div>
-                        </div>
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
@@ -306,11 +383,8 @@
 
     <footer class="footer">
         <div class="footer-info">
-            <span>footer 내용1</span>
-            <span>footer 내용2</span>
-            <span>footer 내용3</span>
-            <span>footer 내용4</span>
-            <span>footer 내용5</span>
+            <a href="mailto:lisianthso@naver.com">lisianthso@naver.com</a>
+            <span>© 2025 Park Sohyeon. All rights reserved.</span>
         </div>
     </footer>
 
@@ -318,7 +392,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
-    <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
