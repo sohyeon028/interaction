@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function fadeCanvas() {
-        ctx.fillStyle = 'rgba(255,255,255,0.05)'; // 0.05=숫자 낮을 수록 흔적 오래 남음
+        ctx.fillStyle = 'rgba(255,255,255,0.15)'; // 숫자 높을 수록 흔적 빨리 사라짐
         ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
 
@@ -211,12 +211,12 @@ document.addEventListener('DOMContentLoaded', function() {
         drawFirework(canvas.width/2, canvas.height/2);
     }, 800);
 
-    // 2초에 한 번, 화면 전체에 4개 불꽃 터뜨리기
+    // 4초에 한 번, 화면 전체에 4개 불꽃 터뜨리기
     setInterval(() => {
         for (let i = 0; i < 4; i++) {
             const x = Math.random() * canvas.width;
             const y = Math.random() * canvas.height;
             drawFirework(x, y);
         }
-    }, 2000);
+    }, 4000);
 });

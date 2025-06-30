@@ -11,6 +11,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center; /* 전체 콘텐츠 중앙 정렬 */
+    cursor: url('images/커서.png'), auto;
 }
 
 @keyframes gradientShift {
@@ -577,8 +578,13 @@ body {
 .gallery-item-info p {
     opacity: 1;
     transition: opacity 0.3s;
-    color: #9c9295;
+    color: #ffffff;
     font-weight: bold;
+    text-shadow: 
+        -0.5px -0.5px 0 #000,
+        0.5px -0.5px 0 #000,
+        -0.5px 0.5px 0 #000,
+        0.5px 0.5px 0 #000;
 }
 .swiper-slide:hover .gallery-item-info h3,
 .swiper-slide:hover .gallery-item-info p {
@@ -757,4 +763,9 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* 호버 가능한 요소들에 포인터 커서 적용 */
+a, button, .main-nav li, .portfolio-main-item-container, .swiper-slide, .profile-image-container, .submit-btn {
+    cursor: pointer;
 }
