@@ -214,8 +214,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // 4초에 한 번, 화면 전체에 4개 불꽃 터뜨리기
     setInterval(() => {
         for (let i = 0; i < 4; i++) {
-            const x = Math.random() * canvas.width;
-            const y = Math.random() * canvas.height;
+            
+            const x = canvas.width * (0.1 + 0.8 * Math.random());
+            const y = canvas.height * (0.1 + 0.8 * Math.random());
             drawFirework(x, y);
         }
     }, 4000);
